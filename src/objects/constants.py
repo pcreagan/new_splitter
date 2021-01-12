@@ -1,10 +1,9 @@
-
 try:
     import RPi.GPIO as rpi
 except ImportError:
     pass
 
-
+import os
 from enum import Enum
 from socket import AF_INET
 from socket import SOCK_DGRAM
@@ -12,15 +11,16 @@ from socket import SOCK_DGRAM
 from serial import EIGHTBITS
 from serial import STOPBITS_TWO
 
+IS_LINUX = os.name != 'nt'
+
 FRAME_PERIOD = .033
-CONFIG_PATH = r'C:\Projects\dmx_splitter\cfg\ini'
+CONFIG_PATH = r'C:\Projects\new_splitter\cfg\ini'
 
 TIMEOUT = FRAME_PERIOD * 1.5
 
 PIN_MAP = rpi.BOARD
 # PIN_MAP = rpi.BCM
 CHANNELS = [7, 11, 13, 15]
-
 
 LENGTH = 1048
 HEADER_LENGTH = 24

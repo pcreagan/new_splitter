@@ -1,8 +1,8 @@
-from src.constants import CONFIG_PATH
-from src.error import FatalError
+from src.objects.constants import CONFIG_PATH
+from src.objects.error import FatalError
 
 __all__ = [
-    'CONFIG',
+    'Config',
 ]
 
 
@@ -42,6 +42,3 @@ class Config:
 
         except Exception as e:
             raise FatalError('FAILED TO LOAD CONFIG') from e
-
-
-CONFIG = Config()

@@ -2,8 +2,8 @@ try:
     import RPi.GPIO as rpi
 except ImportError:
     pass
-from src.constants import CHANNELS
-from src.constants import PIN_MAP
+from src.objects.constants import CHANNELS
+from src.objects.constants import PIN_MAP
 
 __all__ = [
     'GPIO',
